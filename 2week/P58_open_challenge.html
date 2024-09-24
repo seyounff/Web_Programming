@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function show() {
+            const img = document.getElementById("fig");
+            img.src = "https://health.chosun.com/site/data/img_dir/2023/07/17/2023071701753_0.jpg";
+            img.width = 300; 
+            img.height = 320;
+            img.style.display = "block"; 
+        }
+        function hide() {
+            const img = document.getElementById("fig");
+            img.style.display = "none"; 
+        }
+    </script>
+    <title>나의 소개</title>
+</head>
+<body>
+    <h1 onmouseover="show()" onmouseout="hide()">2020675071 한세윤</h1>
+    <hr>
+    <img id="fig" src="" alt="이미지" style="display: none;"> 
+    <div>
+        저는 대한민국에서 태어나서 소프트웨어를 전공하는 학생입니다. 
+        제가 제일 좋아하는 과목은 <span style="font-size: 24px;">자바</span>입니다. 
+    </div>
+    
+</body>
+</html>
