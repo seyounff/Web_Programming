@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>도형 서식 폼 만들기</h1>
+<hr>
+<body>
+    <fieldset>
+        <legend>도형 서식 입력</legend>
+        <form>
+            선종류
+            <select name ="선종류">
+                <option value="1" selected>선없음</option>
+                <option value="2">실선</option>
+                <option value="3">점선</option>
+            </select>
+        </form>
+        <form>
+        <label>선두께<input type="text" size=4 value=""></label>
+        선색 <input type="color" value="#00BFFF" onchange="document.body.style.color=this.value">
+        </form>
+        투명도(0~100) : <input type="range" id="temperatureRange" name="temperature" min="0" max="100" list="temperatures">
+
+        <datalist id="temperatures">
+          <option value="0" label="0"></option>
+          <option value="50" label="50"></option>
+          <option value="100" label="100"></option>
+        </datalist>
+       
+    </fieldset>
+</body>
+</html>
