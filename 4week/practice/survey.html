@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="survey5.css">
+	<title>소프트웨어 기술 선호에 관한 설문지</title>
+    <style>
+        html, body {
+            margin : 0;
+            padding : 0;
+            height: 100%;
+        }
+        
+        header {
+            background: yellow;
+            width: 100%; height: 15%;
+        }
+        
+        form {
+            background: pink;
+            width: 100%; height: 70%;
+            margin: 10px 10px;
+        }
+        
+        footer {
+            background: violet;
+            width: 100%; height: 15%;
+        }
+        
+        h1 {text-align: center;}
+    </style>
+</head>
+<body>
+	<header>
+		<h1>설문지</h1>
+		<p>
+			소프트웨어 기술에 대한 의견을 듣습니다. 많은 참여 부탁드립니다.
+		</p>
+	</header>
+	<form>
+		<span>학년</span>
+		<label><input type="radio" name="grade" value="1">1학년</label>
+		<label><input type="radio" name="grade" value="2">2학년</label>
+		<label><input type="radio" name="grade" value="3">3학년</label>
+		<label><input type="radio" name="grade" value="4">4학년</label>
+		<br><br>	
+		<span>성별</span>
+		<label><input type="radio" name="gender" value="5">남</label>
+		<label><input type="radio" name="gender" value="6">여</label>
+		<br><br>	
+		<span>관심 분야</span>
+		<select name="interest">
+			<option value="7">모바일 소프트웨어</option>
+			<option value="8">시스템 프로그래밍</option>
+			<option value="9">게임 개발</option>
+			<option value="10">프론트엔드 개발자</option>
+		</select>
+		<br><br>
+		<span>진로</span>
+		<label><input type="checkbox" value="11">개발</label>
+		<label><input type="checkbox" value="12">기획</label>
+		<label><input type="checkbox" value="13">영업</label>
+		<label><input type="checkbox" value="14">창업</label><br><br>
+		<span>남기고 싶은 말</span> 
+		<textarea cols="50" rows="10" placeholder="글을 남겨주세요"></textarea>
+	</form>
+	<footer>
+		
+	</footer>
+</body>
+</html>
