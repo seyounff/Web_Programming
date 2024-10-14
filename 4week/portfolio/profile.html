@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020675071 한세윤</title>
+    <style>
+        @font-face {
+            font-family: BASIC_FONT;
+            src: url("fonts/D2CodingAll/D2Coding-Ver1.3.2-20180524-all.ttc");
+        }
+        #allBox{
+            
+            border: #414040 5px solid;
+            border-radius: 20px;
+            -moz-border-radius: 40px; 
+            box-shadow: rgba(255, 255, 255, 0.2) 0px 3px 3px;
+            -webkit-box-shadow: rgba(106, 106, 150, 0.2) 0px 15px 15px;
+            -moz-box-shadow: rgba(82, 82, 180, 0.2) 0px 15px 15px;
+        }
+        #headBlank{
+            height: 10%;
+        }
+        #topMenus {
+            width: 70%; height: 15%;
+            margin: auto;
+	        text-align: left;
+            position: relative;
+        }
+        #topMenus h1 {
+            font-family: BASIC_FONT;
+            font-size: 32px;
+            padding: 20px;
+            color: #ffffff;
+        }
+        #topMenus ul {       
+            position: absolute;
+            top: 8px;
+            right: 0;
+            text-align: right;
+            width: 500px;
+            height: 50px;
+            font-size: 16px;
+        }
+        
+        #topMenus ul li {
+            display: inline;
+            padding-right: 15px;
+        }
+        
+        #topMenus ul li a {
+            font-family: BASIC_FONT;
+            color: #ffffff
+        }
+        #topMenus ul li a:hover {
+            border-bottom: #c6df3b 2px dotted;
+            padding-bottom: 3px;
+        }
+        #basicInfo{
+            background-color: rgba(16, 16, 16, 1);
+            width: 70%; height: 50%;
+            margin: auto;
+	        text-align: left;
+            position: relative;
+            min-height: 200px;
+        }
+        #blank{
+            width: 70%; 
+            min-height: 50px;
+        }
+
+        #myPhoto {
+            position: absolute; 
+            right: 0; 
+            top: 50%; 
+            transform: translateY(-40%); 
+        }
+        #nowStep {
+            width: 100px;
+        }
+
+        body {
+            font-family: BASIC_FONT;
+            background-color: black;
+            color: white; 
+        }
+
+        hgroup h1 {
+            font-family: BASIC_FONT;
+            font-size: 25px;
+            color: #ffffff;
+        }
+        
+        hgroup h2 {
+            font-family: BASIC_FONT;
+            color: #f1f1f1;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        header{
+            
+            width: 70%; height: 25%;
+            margin: auto;
+	        text-align: left;
+            position: relative;
+        }
+
+        footer {
+            font-family: BASIC_FONT;
+            border: #414040 5px solid;
+            border-radius: 10px;
+            background-color: rgba(16, 16, 16, 1);
+            width: 100%;
+            min-height: 200px; 
+            margin: auto;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+        }
+
+        aside {
+            position: absolute;
+            width: 200px;
+            top: 0;
+            right: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .box{
+            border: #414040 2px solid;
+            border-radius: 5px;
+            -moz-border-radius: 40px; 
+            box-shadow: rgba(255, 255, 255, 0.2) 0px 3px 3px;
+            -webkit-box-shadow: rgba(106, 106, 150, 0.2) 0px 15px 15px;
+            -moz-box-shadow: rgba(82, 82, 180, 0.2) 0px 15px 15px;
+        }
+
+        .box_Menu{
+            border: #414040 2px solid;
+            border-radius: 5px;
+            -moz-border-radius: 20px; 
+            box-shadow: rgba(0, 0, 128, 0.2) 0px 3px 3px;
+            -webkit-box-shadow: rgba(0, 0, 128, 0.2) 0px 15px 15px;
+            -moz-box-shadow: rgba(0, 0, 128, 0.2) 0px 15px 15px;
+        }
+
+        .fixWidth {
+            width: 560px;
+            padding: 0 10px 0 10px;
+            margin: 0 0 20px 0;
+        }
+        
+   </style>
+</head>
+<body>
+    <div id="allBox">
+        <div id="headBlank" style="min-height: 20px">
+            
+        </div>
+        <section id="topMenus" class="box_Menu fixWidth">
+            <h1>SKDIA</h1>
+            <nav>
+                <ul>
+                    <li><a href="./">첫 화면</a></li>
+                    <li><a href="https://blog.naver.com/skdia802">블로그</a></li>
+                    <li><a href="https://www.youtube.com/@skdia01">유튜브</a></li>
+                    <li><a href="https://www.instagram.com/">인스타그램</a></li>
+                    <li><a href="skdia802@naver.com">이메일</a></li>
+                </ul>
+            </nav>
+        </section>
+        <hgroup>
+            <header>
+                <h1>2020675071 한세윤 소개 페이지</h1>
+                <h2>이 페이지는 HTML5 기반으로 제작되었으며, 과제용으로 작성되었습니다.
+                    내세울 내용이 많이 없습니다. 열심히 공부하도록 하겠습니다.
+                    진행상태는 <progress id="nowStep" value="15" max="100">35%</progress> 입니다.
+                </h2>
+            </header>
+        </hgroup>
+        
+        <div id="basicInfo" class="box fixWidth">
+            <section style="flex: 1;">
+                <hgroup>
+                    <h1>기본정보</h1>
+                    <ul>
+                        <li>반여고등학교 졸업</li>
+                        <li>경성대학교 소프트웨어학과 20학번</li>
+                        <li>Python, C, Java, C++, 어셈블리의 기초를 완료하였습니다.</li>
+                        <li>취미로 어셈블리를 활용한 스크립트 제작을 좋아합니다.</li>
+                        <li>열심히 하겠습니다.</li>
+                        <li>군필</li>
+                    </ul>
+                </hgroup>
+            </section>
+            <aside id="myPhoto" style="margin-left: 20px;">
+                <img src="images/myPhoto.jpg" alt="내 사진" style="width: 100px; border-radius: 10px;">
+            </aside>
+        </div>
+        <div id="blank">
+    
+        </div>
+    </div>
+    <footer>
+        이 문서는 HTML5 예제용으로 작성한 문서이며, 크롬 브라우저에서 테스트 되었습니다. 수정 및 재배포 자유. 
+    </footer>
+</body>
+</html>
