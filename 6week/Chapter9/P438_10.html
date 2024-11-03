@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>계산기 만들기</title>
+	<style>
+		input {
+			width: 70px;
+			height: 30px;
+		}
+		#result{
+			width: 300px;
+			height: 10px;
+		}
+	</style>
+	<script>
+		function back(){
+			var exp = document.getElementById("result");
+			exp.value=exp.value.substring(0, exp.value.length-1);
+		}
+		function reset(){
+			var exp = document.getElementById("result");
+			exp.value="";
+		}
+		function calculate(){
+			var exp = document.getElementById("result");
+			exp.value=eval(exp.value);
+		}
+		function input(obj){
+			var exp = document.getElementById("result");
+			exp.value =  exp.value+obj.value;
+		}
+	</script>
+</head>
+<body>
+	<h3>계산기 만들기</h3>
+	<hr>
+	<input id="result" type="text" value="0"><br>
+	<table>
+		<tr>
+			<td><input type="button" name="계산기" value="BACK" onclick="back()"></td>
+			<td><input type="button" name="계산기" value="CE" onclick="reset()"></td>
+			<td><input type="button" name="계산기" value="C" onclick="reset()"></td>
+			<td><input type="button" name="계산기" value="=" onclick="calculate()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="계산기" value="7" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="8" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="9" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="/" onclick="input(this)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="계산기" value="4" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="5" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="6" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="*" onclick="input(this)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="계산기" value="3" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="2" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="1" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="+" onclick="input(this)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="계산기" value="0" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="-" onclick="input(this)"></td>
+			<td><input type="button" name="계산기" value="NONE"></td>
+			<td><input type="button" name="계산기" value="NONE"></td>
+		</tr>
+	</table>
+</body>
+</html>
