@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>아이템에 마우스 올리면 설명 출력</title>
+</head>
+<script>
+	var text=["빨간 자전거를 타고 서울, 대전, 대구, 부산 찍고, 목포, 인천을 거쳐 달린다.",
+			"한국 고전 100권을 읽는다.",
+			"철인 3종 경기를 열심히 한다.",
+			"자바스크립트를 열심히 공부한다."];
+
+	function over(e) {
+    	var n=0;
+    	switch(e.target.id) {
+        	case "l0" : n = 0; break;
+        	case "l1" : n = 1; break;
+        	case "l2" : n = 2; break;
+        	case "l3" : n = 3; break;
+    	}
+    	var commentDiv = document.getElementById("commentDiv"); 
+    	commentDiv.innerHTML = text[n];
+    	commentDiv.style.left = e.clientX + "px";
+    	commentDiv.style.top = e.clientY + "px";
+    	commentDiv.style.border = "1px solid yellowgreen";
+    	commentDiv.style.background = "aliceblue";
+    	commentDiv.style.visibility = "visible";
+    	commentDiv.style.width = "200px";
+    	commentDiv.style.height = "80px";   
+	}
+ 
+	function hideCommentDiv() {
+	var commentDiv = document.getElementById("commentDiv"); 
+    commentDiv.style.visibility = "hidden"; // return; 으로 대체가능
+	}
+</script>
+<body>
+	<h3>아이템에 마우스 올리면 설명 출력</h3>
+	<hr>
+	여름 방학 때 하고 싶은 것들
+	<ul>
+		<li id="l0" onmouseover="over(event)" onmouseout="hideCommentDiv()">자전거로 대한민국 일주</li>
+		<li id="l1" onmouseover="over(event)" onmouseout="hideCommentDiv()">책 100권 읽기</li>
+		<li id="l2" onmouseover="over(event)" onmouseout="hideCommentDiv()">철인 3종 경기 준비</li>
+		<li id="l3" onmouseover="over(event)" onmouseout="hideCommentDiv()">자바스크립트 정복</li>
+	</ul>
+	<div id="commentDiv" style="position:absolute"></div>
+</body>
+</html>

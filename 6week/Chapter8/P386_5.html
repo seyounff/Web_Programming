@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>z-index 속성 연습</title>
+    <style>
+        div.container { position: relative; }
+        img.card { position: absolute; }
+    </style>
+</head>
+<body>
+    <h3>z-index 스타일 프로퍼티</h3>
+    <hr>
+    <div class="container">
+        <img class="card" src="spadeA.png" width="100" height="140" alt="스페이드 A">
+        <img class="card" src="spade2.png" width="100" height="140" alt="스페이드 2">
+        <img class="card" src="spade3.png" width="100" height="140" alt="스페이드 3">
+        <img class="card" src="spade7.png" width="100" height="140" alt="스페이드 7">
+    </div>
+    <script>
+        const cards = document.querySelectorAll("img.card");
+        cards.forEach((card, index) => {
+            card.style.zIndex = index;
+            card.style.left = "15px";
+            card.style.top = "25px";
+            card.addEventListener("click", shuffleZIndex);
+        });
+
+        function shuffleZIndex() {
+            cards.forEach(card => {
+                card.style.zIndex = (parseInt(card.style.zIndex) + 1) % cards.length;
+            });
+        }
+    </script>
+</body>
+</html>

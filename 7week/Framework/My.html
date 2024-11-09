@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020675071 한세윤</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bulma CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'BASIC_FONT', Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        #allBox {
+            border: #414040 5px solid;
+            border-radius: 20px;
+            box-shadow: rgba(255, 255, 255, 0.2) 0px 3px 3px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        #topMenus h1 {
+            color: #f7f7f7;
+        }
+        .navbar-menu .navbar-end a {
+            color: #ffffff;
+        }
+        #basicInfo {
+            text-align: center;
+            margin-top: 30px;
+            color: white; /* 기본정보 제목 색을 하얀색으로 설정 */
+        }
+        #basicInfo h1 {
+            color: #ffffff; /* 기본정보 제목을 하얀색으로 변경 */
+        }
+        #basicInfo h1:hover {
+            text-decoration: none;
+        }
+        /* 내용이 사각형 박스로 나타나도록 스타일링 */
+        .info-box {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 10px;
+            margin-top: 20px;
+        }
+        .navbar-menu .navbar-end a {
+            color: #ffffff;
+        }
+        footer {
+            font-family: 'BASIC_FONT';
+            border: #414040 5px solid;
+            border-radius: 10px;
+            background-color: rgba(16, 16, 16, 1);
+            padding: 20px;
+            text-align: center;
+        }
+        #skdiaTitle {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+        }
+        #skdiaTitle:hover {
+            color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <div id="allBox" class="container">
+        <!-- SKDIA title -->
+        <div id="skdiaTitle">
+            <h1>SKDIA</h1>
+        </div>
+
+        <!-- Top Menu (Initially Hidden) -->
+        <section id="topMenus" class="box_Menu" style="display: none;">
+            <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <h1 class="title">SKDIA</h1>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="./" class="navbar-item">첫 화면</a>
+                        <a href="https://blog.naver.com/skdia802" class="navbar-item">블로그</a>
+                        <a href="https://www.youtube.com/@skdia01" class="navbar-item">유튜브</a>
+                        <a href="https://www.instagram.com/" class="navbar-item">인스타그램</a>
+                        <a href="mailto:skdia802@naver.com" class="navbar-item">이메일</a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <!-- Main Content (Initially Hidden) -->
+        <div id="content" style="display: none;">
+            <header class="mt-5">
+                <h1 class="is-size-4 has-text-white has-text-centered">2020675071 한세윤 소개 페이지</h1>
+                <h2 class="is-size-6 has-text-grey-light has-text-centered">
+                    이 페이지는 HTML5 기반으로 제작되었으며, 과제용으로 작성되었습니다.
+                    내세울 내용이 많이 없습니다. 열심히 공부하도록 하겠습니다.
+                    진행상태는 <progress id="nowStep" value="15" max="100">35%</progress> 입니다.
+                </h2>
+            </header>
+
+            <div id="basicInfo" class="mt-5">
+                <h1>
+                    <a data-toggle="collapse" href="#infoContent" role="button" aria-expanded="false" aria-controls="infoContent">
+                        기본정보
+                    </a>
+                </h1>
+                <div id="infoContent" class="collapse">
+                    <!-- 정보 박스 -->
+                    <div class="info-box">
+                        <ul>
+                            <li>반여고등학교 졸업</li>
+                            <li>경성대학교 소프트웨어학과 20학번</li>
+                            <li>Python, C, Java, C++, 어셈블리의 기초를 완료하였습니다.</li>
+                            <li>취미로 어셈블리를 활용한 스크립트 제작을 좋아합니다.</li>
+                            <li>열심히 하겠습니다.</li>
+                            <li>군필</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5">
+            이 문서는 HTML5 예제용으로 작성한 문서이며, 크롬 브라우저에서 테스트 되었습니다. 수정 및 재배포 자유.
+        </footer>
+    </div>
+
+    <!-- Bootstrap and Bulma JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to handle SKDIA click and content reveal -->
+    <script>
+        document.getElementById('skdiaTitle').addEventListener('click', function() {
+            // Hide SKDIA title and show top menus and content
+            document.getElementById('skdiaTitle').style.display = 'none';
+            document.getElementById('topMenus').style.display = 'block';
+            document.getElementById('content').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 자기소개 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            color: #333;
+        }
+        .button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        .info {
+            margin-top: 20px;
+            display: none;
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>안녕하세요, 저는 한세윤입니다!</h1>
+        <button class="button" id="showInfoButton">자세히 보기</button>
+        
+        <div class="info" id="infoBox">
+            <ul>
+                <li>학교: 경성대학교 소프트웨어학과</li>
+                <li>학번: 20학번</li>
+                <li>취미: 프로그래밍, 독서</li>
+                <li>좋아하는 언어: Python, Java</li>
+                <li>꿈: 소프트웨어 개발자로 성장하는 것</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 버튼 클릭 시 자기소개 내용 보이기
+        document.getElementById('showInfoButton').addEventListener('click', function() {
+            const infoBox = document.getElementById('infoBox');
+            if (infoBox.style.display === 'block') {
+                infoBox.style.display = 'none'; // 이미 보이면 숨기기
+                this.innerText = '자세히 보기';
+            } else {
+                infoBox.style.display = 'block'; // 보이지 않으면 보이기
+                this.innerText = '접기';
+            }
+        });
+    </script>
+    
+</body>
+</html>
