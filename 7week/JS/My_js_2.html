@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 자기소개 페이지</title>
+</head>
+<body>
+    <script>
+    
+        const container = document.createElement("div");
+        container.style.fontFamily = "Arial, sans-serif";
+        container.style.backgroundColor = "#f0f0f0";
+        container.style.padding = "20px";
+        container.style.margin = "0 auto";
+        container.style.maxWidth = "600px";
+        container.style.borderRadius = "10px";
+        container.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.2)";
+
+        
+        const title = document.createElement("h1");
+        title.textContent = "자기 소개 페이지";
+        title.style.textAlign = "center";
+        title.style.color = "#333";
+        container.appendChild(title);
+ 
+        const nameInfo = document.createElement("p");
+        nameInfo.textContent = "이름: 한세윤";
+        nameInfo.style.fontSize = "1.2em";
+        nameInfo.style.margin = "10px 0";
+        container.appendChild(nameInfo);
+
+        
+        const deptInfo = document.createElement("p");
+        deptInfo.textContent = "학과: 소프트웨어학과";
+        deptInfo.style.fontSize = "1.2em";
+        deptInfo.style.margin = "10px 0";
+        container.appendChild(deptInfo);
+
+      
+        const description = document.createElement("p");
+        description.textContent = "안녕하세요! 열심히 공부하며 성장해 나가고 있습니다.";
+        description.style.fontSize = "1em";
+        description.style.color = "#555";
+        description.style.margin = "10px 0";
+        container.appendChild(description);
+
+
+        document.body.appendChild(container);
+    </script>
+</body>
+</html>

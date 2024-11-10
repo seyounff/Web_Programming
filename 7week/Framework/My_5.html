@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020675071 한세윤</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #312e81);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        #introContainer {
+            background-color: #1f2937;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 750px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        #introContainer:hover {
+            transform: scale(1.02);
+        }
+        #titleSection h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f3f4f6;
+            cursor: pointer;
+            text-align: center;
+            transition: color 0.2s;
+        }
+        #titleSection h1:hover {
+            color: #a5b4fc;
+        }
+        .nav-button {
+            background-color: #4f46e5;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+        .nav-button:hover {
+            background-color: #6366f1;
+        }
+        .info-box {
+            background-color: #374151;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-top: 20px;
+        }
+        footer {
+            border-top: 2px solid #4b5563;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="introContainer" class="container">
+        <!-- Title Section -->
+        <div id="titleSection" class="mb-8">
+            <h1>한세윤 소개 페이지</h1>
+        </div>
+
+        <!-- Navigation Menu (Initially Hidden) -->
+        <div id="navMenu" class="flex flex-wrap justify-center space-x-4 mb-6 fade-in" style="display: none;">
+            <a href="./" class="nav-button">첫 화면</a>
+            <a href="https://blog.naver.com/skdia802" class="nav-button">블로그</a>
+            <a href="https://www.youtube.com/@skdia01" class="nav-button">유튜브</a>
+            <a href="mailto:skdia802@naver.com" class="nav-button">이메일</a>
+        </div>
+
+        <!-- Main Content (Initially Hidden) -->
+        <div id="mainContent" class="mt-8 fade-in" style="display: none;">
+            <header class="text-center mb-5">
+                <h2 class="text-2xl font-bold text-gray-200">2020675071 한세윤</h2>
+                <p class="text-sm text-gray-400 mt-2">이 페이지는 Tailwind와 Bootstrap의 조합으로 제작되었습니다.</p>
+                <p class="text-sm text-gray-500 mt-2">진행 상태: <progress class="progress-bar" value="35" max="100">35%</progress></p>
+            </header>
+
+            <div class="info-box text-gray-300">
+                <h3 class="text-xl font-semibold text-white text-center">기본 정보</h3>
+                <ul class="mt-4 space-y-2 list-disc list-inside text-sm">
+                    <li>반여고등학교 졸업</li>
+                    <li>경성대학교 소프트웨어학과 20학번</li>
+                    <li>Python, C, Java, C++ 기초 완료</li>
+                    <li>어셈블리 스크립트 작성 취미</li>
+                    <li>군필</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer class="mt-8">
+            이 문서는 HTML5 예제용으로 작성되었으며, 수정 및 재배포가 가능합니다.
+        </footer>
+    </div>
+
+    <!-- JavaScript to handle title click and content reveal -->
+    <script>
+        document.getElementById('titleSection').addEventListener('click', function() {
+            // Hide title and show nav menu and main content with fade-in effect
+            document.getElementById('titleSection').style.display = 'none';
+            document.getElementById('navMenu').style.display = 'flex';
+            document.getElementById('mainContent').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
