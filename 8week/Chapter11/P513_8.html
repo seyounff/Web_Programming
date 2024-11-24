@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>mousedown과 mouseup으로 선 그리기</title>
+</head>
+<body>
+	<h3>mousedown과 mouseup으로 선 그리기</h3>
+	<hr>
+	<canvas id="myCanvas" width="500px" height="300px" style="background-color:aliceblue" onmousedown="down(event)" onmouseup="up(event)" onmousemove="move(event)" onmouseout="out(event)"></canvas><br>
+	선굵기: <input id="lineWidth" type="number" value="1">
+	선색: <input id="strokeStyle" type="color" value="#000000">
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext("2d");
+
+		var startX=0, startY=0;
+		var drawing=false;
+		function draw(curX,curY){
+			context.lineWidth=parseInt(document.getElementById("lineWidth").value);
+			context.strokeStyle=document.getElementById("strokeStyle").value;
+			context.beginPath();
+			context.moveTo(startX,startY);
+			context.lineTo(curX,curY);
+			context.stroke();
+		}
+		function down(e){
+			startX=e.offsetX;
+			startY=e.offsetY;
+			drawing=true;
+		}
+		function up(e){
+			drawing=false;
+		}
+		function move(e){
+			if(!drawing){
+				return;
+			}
+			curX=e.offsetX;
+			curY=e.offsetY;
+			draw(curX,curY);
+			startX=curX;
+			startY=curY;
+		}
+		function out(e){
+			drawing = false;
+		}
+	</script>
+</body>
+</html>

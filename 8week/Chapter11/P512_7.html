@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>mousedown과 mouseup으로 선 그리기</title>
+</head>
+<body>
+	<h3>mousedown과 mouseup으로 선 그리기</h3>
+	<hr>
+	<canvas id="myCanvas" width="500px" height="300px" style="background-color:aliceblue" onmousedown="down(event)" onmouseup="up(event)"></canvas>
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext("2d");
+
+		context.strokeStyle="blue";
+		context.lineWidth=3;
+
+		var startX=0, startY=0;
+		var drawing=false;
+		function draw(curX,curY){
+			context.beginPath();
+			context.moveTo(startX,startY);
+			context.lineTo(curX,curY);
+			context.stroke();
+		}
+		function down(e){
+			startX=e.offsetX;
+			startY=e.offsetY;
+			drawing=true;
+		}
+		function up(e){
+			if(!drawing){
+				return;
+			}
+			curX=e.offsetX;
+			curY=e.offsetY;
+			draw(curX,curY);
+			startX=curX;
+			startY=curY;
+		}
+	</script>
+</body>
+</html>

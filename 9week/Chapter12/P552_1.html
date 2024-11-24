@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이름으로 학번 검색</title>
+<script>
+function store(){
+	if(!window.sessionStorage){
+		alert("세션 스토리지를 지원하지 않습니다.");
+		return;
+	}
+	var name = document.getElementById("name");
+	var sid = document.getElementById("sid");
+	sessionStorage.setItem(name.value, sid.value);
+}
+</script>
+</head>
+<body>
+	<h3>이름으로 학번 저장</h3>
+	<hr>
+	<form>
+		<label>저장할 이름 <input id="name" type="text" size="10"></label><br>
+		<label>저장된 학번 <input id="sid" type="text" size="10"></label>
+		<input type="button" value="스토리지에서 저장" onclick="store()">
+	</form><br>
+	<a href="P552_1_2.html" target="_self">이름과 학번 검색 페이지로</a>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>오륜기 그리기</title>
+</head>
+<body>
+	<h3>오륜기 그리기</h3>
+	<hr>
+	<canvas id="myCanvas" width="300" height="220" style="background-color: aliceblue;"></canvas>
+<script>
+	var canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext("2d");
+
+	context.beginPath();
+	context.lineWidth=5;
+	context.strokeStyle="blue";
+	context.arc(70,70,50,2*Math.PI,false);
+	context.stroke();
+
+	context.beginPath();
+	context.strokeStyle="yellow";
+	context.arc(110,110,50,2*Math.PI,false);
+	context.stroke();
+
+	context.beginPath();
+	context.strokeStyle="black";
+	context.arc(150,70,50,2*Math.PI,false);
+	context.stroke();
+
+	context.beginPath();
+	context.strokeStyle="green";
+	context.arc(190,110,50,2*Math.PI,false);
+	context.stroke();
+
+	context.beginPath();
+	context.strokeStyle="red";
+	context.arc(230,70,50,2*Math.PI,false);
+	context.stroke();
+</script>
+</body>
+</html>

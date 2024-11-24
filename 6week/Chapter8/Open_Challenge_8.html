@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>갬블링 게임</title>
+        <style>
+        span{
+            font-size: 4em;
+            font-style: italic;
+        }
+        #no{
+            display: inline-block;
+            width: 10em;
+            height: 5em;
+            border-color: violet;
+            border-style: solid;
+            background-color: linen;
+            text-align: center;
+        }
+        #noo{
+            display: inline-block;
+            width: 40em;
+            font-style: italic;
+            color: violet;
+            text-align: left;
+            font-size: 30px;
+        }
+
+        </style>
+        <script>
+        let allspan = document.getElementsByTagName("span")
+        function change(obj){
+            obj.innerHTML = Math.floor(Math.random() * 3); 
+            
+            if(allspan[0].innerHTML==allspan[1].innerHTML&&allspan[1].innerHTML==allspan[2].innerHTML){
+                let newDiv = document.createElement("div")
+                newDiv.setAttribute("id", "noo")
+                newDiv.innerHTML = "Success(Click here to do again)"
+                
+                newDiv.addEventListener("click",
+                    function a(){
+                        for(var i=0; i<allspan.length; i++){
+                         allspan[i].innerHTML = "0"
+                     }
+                    }
+                )
+                obj.parentElement.appendChild(newDiv)
+            }
+            else{
+                let newDiv = document.createElement("div")
+                newDiv.setAttribute("id", "noo")
+                newDiv.innerHTML = "fail(click here to do agin)"
+                
+                newDiv.addEventListener("click",
+                    function a(){
+                        for(var i=0; i<allspan.length; i++){
+                         allspan[i].innerHTML = "0"
+                     }
+                    }
+                )
+                obj.parentElement.appendChild(newDiv)//생성했으면 반드시 붙여줘야해
+            }
+            
+        }
+        </script>
+    </head>
+    <body>
+        <h3>갬블링 게임</h3>
+        <br>
+        각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.
+        <hr>
+        <div id="no">
+            <span id="n1" onclick="this.innerHTML = Math.floor(Math.random() * 3)">0</span>&nbsp;&nbsp;
+            <span id="n2" onclick="this.innerHTML = Math.floor(Math.random() * 3)">0</span>&nbsp;&nbsp;
+            <span id="n3" onclick="change(this)">0</span>&nbsp;&nbsp;&nbsp;
+        </div>
+    </body>
+</html>

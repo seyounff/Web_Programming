@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title>setInterval(), clearInterval()</title>
+    <style>
+        div{
+            border-style: solid;
+            border-width: 1px;
+            border-color: gray;
+            background-color: aliceblue;
+            padding: 5px;
+            width: 110px;
+        }
+    </style>
+    <script>
+        var timerID = null;
+
+        function clock(){
+            var div = document.getElementById("div");
+            var date = new Date();
+
+            if(date.getHours() >= 12){
+                var day = "오후";
+            }
+            else{
+                var day = "오전";
+            }
+
+            var text = day + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            div.innerHTML = text;
+
+            timerID = setInterval("clock()", 1000);
+
+        }
+
+        function stop(){
+            if(timerID != null){
+                clearInterval(timerID);
+                timerID = null;
+                document.getElementById("div").style.color = "gray";
+            }
+        }
+
+        window.onload = function(){
+            clock();
+        }
+
+        
+    </script>
+</head>
+<body>
+    <h3>div 태그에 시계 만들기</h3>
+    시계를 클릭하면 시계가 멈추고 다시 클릭하면 가기 시작한다.
+    <hr>
+    <div id = "div" onclick = "stop()">
+    </div>
+</body>
+</html>

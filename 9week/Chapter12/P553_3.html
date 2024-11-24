@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>포스트잇</title>
+	<script>
+		function store(){
+			if(!window.localStorage){
+				alert("로컬스토리지를 지원하지 않습니다."); 
+				return;
+			}
+			var title = document.getElementById("title");
+			var content = document.getElementById("content");
+			localStorage.setItem(title.value,content.value);
+		}
+		function show(){
+			var win = window.open();
+			win.document.write("<h3>포스트잇 출력</h3><hr><table id='mytable' style='background:aliceblue'>");
+			for(var i=0;i<localStorage.length;i++){
+				var mytable=win.document.getElementById('mytable');
+				var newtr = document.createElement("tr");
+				var td1 = document.createElement("td");
+				var th2 = document.createElement("th");
+				var td3 = document.createElement("td");
+				td1.style.border="1px solid green";
+				td1.innerHTML=i+1;
+				th2.innerHTML=localStorage.key(i);
+				th2.style.width="100px";
+				td3.innerHTML=localStorage.getItem(localStorage.key(i));
+				td3.style.width="100px";
+				newtr.appendChild(td1);
+				newtr.appendChild(th2);
+				newtr.appendChild(td3);
+				mytable.appendChild(newtr);
+			}
+			win.document.write("</table>");
+			win.document.close();
+		}
+	</script>
+</head>
+<body>
+	<h3>포스트잇</h3>
+	<hr>
+	<form>
+		<label>제목 <input id="title" type="text"></label><br>
+		<label>메모입력<br><textarea id="content"></textarea></label><br>
+		<input type="button" value="저장" onclick="store()"> 
+		<input type="button" value="보기" onclick="show()">
+	</form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>캔버스에 파이 차트 그리기</title>
+    </head>
+    <script>
+    function draw(){
+    let canvas  = document.getElementById("chartcanvas")
+    let context = canvas.getContext("2d")
+    let sw = canvas.width
+    let sh = canvas.height
+    let padding = 100
+
+    let dataa = document.getElementById("A")
+    let data = []
+    for(let i = 0; i<dataa.length; i++){
+        data[i] = dataa[i]
+    }
+    let color = ["lawngreen", "blue", "deeppink", "aquamarine3", "magenta", "gold"]
+    let conterX = sw/2
+    let conterY = sh/2
+
+    let radius = Math.min(sw-(padding*2), sh-(padding*2))/2
+    let angle = 0
+    let total = 0
+    for(let i in data){
+        total+= data[i]
+    }
+
+    for(let i = 0; i< data.length; i++){
+        context.fillstyle = color[i]
+        context.beginPath()
+        context.moveTo(conterX, conterY)
+        context.arc(conterX, conterY, radius, angle, angle+(Math.PI*2*(data[i]/total)))
+        context.lineTo(conterX, conterY)
+        context.fill()
+        angle +=Math.PI*2*(data[i]/total)
+        context.stroke()
+    }
+}
+    </script>
+    <body>
+        <h3>학점 별로 학생 수를 입력하면 파이 차트로 비율 그리기</h3>
+        <hr>
+        A <input type="number" id="A" >
+        B <input type="number" id="A" >
+        C <input type="number" id="A" >
+        <br>
+        D <input type="number" id="A" >
+        E <input type="number" id="A" >
+        F <input type="number" id="A" >
+        <button type="button" onclick="draw()">차트 그리기</button>
+        <br>
+        <canvas id="chartcanvas" width="500" height="400" >
+    </body>
+</html>
