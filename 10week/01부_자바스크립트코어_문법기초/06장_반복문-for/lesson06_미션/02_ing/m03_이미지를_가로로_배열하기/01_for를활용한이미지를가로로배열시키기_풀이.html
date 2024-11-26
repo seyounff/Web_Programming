@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+    <style>
+        div.image-container {
+            position: relative;
+        }
+
+        div.image-container img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 120px;
+        }
+        
+        #btnStart{
+            padding:5px;
+            margin-bottom:5px;
+        }
+    </style>
+
+    <!--
+
+    미션 03: 이미지를 가로로 배열하기
+    버튼을 클릭하면 이미지를 요구사항에 맞게 배열해 주세요.
+
+    요구사항
+        01. 이미지 시작위치는 left:100, top:100 입니다.
+        02. 하나의 이미지 영역(이미지 크기와 여백 포함)은 150*150입니다.
+        03. 이미지를 가로로 배열해 주세요.
+
+
+    힌트 :
+        이미지 위치 설정하기
+            $대상.css({
+                left:위치값,
+                top:위치값
+            })
+
+    -->
+    <script type="text/javascript"  src="../../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 버튼 클릭 이벤트 실행.
+            $("#btnStart").click(function() {
+
+                // 이미지 찾기.
+                var $images = $("img");
+
+                // 이미지 개수 구하기.
+                var length = $images.length;
+
+                // 여기에 풀이를 입력해주세요.
+
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <button id="btnStart">
+            배열시작
+        </button>
+    </div>
+    <div class="image-container">
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+    </div>
+</body>
+</html>

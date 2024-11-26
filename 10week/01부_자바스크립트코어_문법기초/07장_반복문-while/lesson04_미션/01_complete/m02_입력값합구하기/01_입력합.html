@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+    <script type="text/javascript">
+        /*
+         미션 02: 입력 값 합 구하기
+         end가 입력될 때까지 숫자를 계속해서 입력받아 다음과 같이 출력되게 만들어 주세요.
+
+         요구사항:
+         - window.prompt()를 이용해 값을 입력받을 때 입력받는 횟수가 출력되어야 합니다.
+         - 입력 값이 end면 alert()을 이용해 “입력이 종료되었습니다.” 메시지를 띄운 후 프로그램을 종료해 주세요.
+         - end가 아닌 경우 입력받은 값의 합을 document.write()를 이용해 화면에 출력해 주세요.
+
+
+         */
+
+        var result = 0;
+        var i = 1;
+        while (true) {
+            var value = window.prompt(i + "번째 입력 ");
+            if (value == "end") {
+                alert("입력이 종료 되어습니다.");
+                break;
+            }
+
+            result += parseInt(value);
+            document.write("현재 합은 = " + result, "<br>");
+        }
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

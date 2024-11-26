@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+            #panel {
+                width: 700px;
+                height: 600px;
+                border: 1px solid #999;
+                position: relative;
+            }
+
+            #bar {
+                position: absolute;
+                left: 550px;
+                top: 0px;
+                width: 20px;
+                height: 600px;
+                background: #F30;
+            }
+
+            .fish {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            #nav {
+                text-align: center;
+                width: 700px;
+            }
+
+            #info {
+                text-align: center;
+                width: 700px;
+            }
+        </style>
+
+        <script src="../../../libs/jquery-1.11.0.min.js"></script>
+
+        <script>
+            /*
+             미션 03: 물고기 경주 게임
+
+             요구사항에 맞게 구현해주세요.
+             - 시작 버튼을 누르면 경기가 시작해야 합니다.
+             - 물고기는 실제 경주 게임처럼 어떤 물고기가 1등이 될 것인지 예측할 수 없게 만들어 주세요.
+             - 물고기가 골인 지점을 통과하면 몇 번째 물고기가 우승했는지 알려주고 게임을 종료시켜 주세요.
+             */
+
+            /*
+             단계 03
+                - 물고기 랜덤 하게 움직이기
+
+             단계 02
+                 - 시작 버튼 처리
+                 - 게임 구조 잡기
+
+             단계 01
+                - 함수 단위로 초기화 작업 만들기
+
+             */
+            var $fishList = null;
+            var timerID = -1;
+            $(document).ready(function() {
+                // 요소 초기화
+                init();
+                // 물고기 시작 위치 초기화
+
+                initFishPosition();
+
+                // 이벤트 초기화 함수 호출
+                initEvent();
+            })
+            // 전역에서 사용할 요소는 이곳에서 초기화 해주세요.
+            function init() {
+                $fishList = $(".fish");
+            }
+
+            // 물고기 시작 위치 초기화
+            function initFishPosition() {
+
+                // 물고기 배열 하기
+                for (var i = 0; i < $fishList.length; i++) {
+                    var $fish = $fishList.eq(i);
+                    // 물고기 위치는 100부터 시작
+                    $fish.css({
+                        left : 0,
+                        top : 100 + (i * 150)
+                    })
+                }
+            }
+
+            // 이벤트 등록 처리 함수
+            function initEvent() {
+                $("#start").click(function() {
+                    startGame();
+                });
+            }
+
+            // 물고기 게임 시작
+            function startGame() {
+
+                if (timerID == -1) {
+                    timerID = setInterval(function() {
+                        // 물고기 위치 움직이기
+                        updateFishPosition();
+
+                        // 물고기 위치 정보 출력
+                        displayFishPositionInfo();
+
+                        // 물고기 골인 지점 체크
+                        if (checkGoleFish()) {
+                            // 게임 종료
+                            endGame();
+                        }
+                    }, 200);
+                }
+            }
+
+            // 물고기 위치 움직이기
+            function updateFishPosition() {
+                console.log("1. 물고기를 랜덤으로 움직이기");
+
+                for (var i = 0; i < $fishList.length; i++) {
+                    // 현재 물고기
+                    var $fish = $fishList.eq(i);
+                    // 물고기 이동 크기, 0~30 사이의 랜덤 값
+                    var step = Math.ceil(Math.random() * 30);
+                    // 신규 물고기 위치
+                    var newLeft = $fish.position().left + step;
+
+                    // 물고기 이동 시키기
+                    $fish.css("left", newLeft);
+
+                }
+            }
+
+            // 물고기 위치 정보 출력
+            function displayFishPositionInfo() {
+                console.log("2. 물고기 정보 출력");
+
+            }
+
+            // 물고기 중 골인 지점을 통과한 물고기가 있는지 판단하기
+            function checkGoleFish() {
+                console.log("3. 물고기 골인 지점 체크");
+            }
+
+            // 게임 종료
+            function endGame() {
+                console.log("4. 게임 종료 처리");
+
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <div id="panel">
+            <div id="bar"></div>
+            <div class="fish">
+                <img src="fish.png">1번
+            </div>
+            <div class="fish">
+                <img src="fish.png">2번
+            </div>
+            <div class="fish">
+                <img src="fish.png">3번
+            </div>
+        </div>
+
+        <div id="nav">
+            <button id="start">
+                게임 시작!
+            </button>
+        </div>
+        <div id="info">
+            기록 표시
+        </div>
+
+    </body>
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title></title>
+
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+        예제01: if문으로 되어 있는 구문을 switch문으로 변경해 주세요.
+
+        var luckyValue = window.prompt("두근! 두근! 행운의 번호를 고르세요.");
+        if(luckyValue=="3")
+            document.write("당첨! 냉장고 ");
+        else if(luckyValue=="2")
+            document.write("당첨! 세탁기");
+        else if(luckyValue=="1")
+            document.write("당첨! TV");
+        else
+            document.write("꽝입니다.");
+
+        var luckyValue = window.prompt("두근! 두근! 행운의 번호를 고르세요.");
+         */
+
+        var luckyValue = window.prompt("두근! 두근! 행운의 번호를 고르세요.");
+
+        switch(luckyValue){
+            case "3" :
+                document.write("당첨! 냉장고<br>");
+                break;
+            case "2" :
+                document.write("당첨! 세탁기<br>");
+                break;
+            case "1" :
+                document.write("당첨! TV<br>");
+                break;
+            default :
+                document.write("꽝입니다.<br>");
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

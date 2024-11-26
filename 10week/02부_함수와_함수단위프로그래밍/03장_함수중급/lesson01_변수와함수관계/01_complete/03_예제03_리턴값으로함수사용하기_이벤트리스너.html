@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>예제</title>
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+       /*
+        예제 03: 버튼을 클릭할 때마다 매개변수 값으로 넘긴 hello 함수가 호출됩니다.
+        */
+        $(document).ready(function(){
+
+            function hello(){
+                document.write("안녕하세요. 환영합니다.");
+            }
+            $("#btnStart").click(hello);
+        })
+
+
+
+
+    </script>
+</head>
+
+	
+<body>
+	<button id="btnStart">시작</button>
+</body>
+</html>	

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+	   *{
+	       margin:0;
+	       padding:0;
+	   }
+	   
+.banner {
+    width:400px;
+    height:200px;
+        
+    position:absolute;
+    border:2px solid #000;
+}
+    
+#banner1 {
+    top:100px;
+    left:100px;
+}
+
+
+#banner2 {
+    left:550px;
+    top:100px;
+    width:200px;
+    height:100px;
+}
+
+	</style>
+	<script src="../../../libs/jquery-1.11.0.min.js"></script>
+	
+	<script>
+        /*
+        미션01: 랜덤으로 배경이미지 변경하기
+        -기존 코드를 수정해 1초에 한 번씩 배열에 들어 있는 이미지를 랜덤 순으로 전환되게 만들어 주세요.
+
+         */
+
+        $(document).ready(function(){
+            var imgList1 = ["logo_01.jpg","logo_02.jpg","logo_03.jpg","logo_04.jpg","logo_05.jpg"];
+            var imgList2 = ["logo_02.jpg","logo_05.jpg","logo_03.jpg","logo_04.jpg","logo_01.jpg"];
+
+            // 첫 번째 배너
+            banner("#banner1", imgList1, 1000);
+            banner("#banner2", imgList2, 3000);
+        })
+
+        // 배너
+        function banner(selector, imgList, speed){
+            var currentIndex=1;
+            var $banner = $(selector);
+
+            // 1초에 한번씩 함수 호출
+            setInterval(function(){
+                // 다음에 등장할 배너 인덱스 값 구하기
+                currentIndex++;
+                if(currentIndex>=imgList.length)
+                    currentIndex = 0;
+
+                // 다음 이미지 이름 구하기
+                var imgName = imgList[currentIndex];
+                // 다음 이미지 출력
+                $banner.attr("src", "./images/"+imgName);
+            },speed)
+        }
+
+
+	</script>	
+		
+		
+</head>
+
+<body>
+    <img src="images/logo_01.jpg" class="banner" id="banner1">
+    <img src="images/logo_02.jpg" class="banner" id="banner2">
+</body>
+
+</html>

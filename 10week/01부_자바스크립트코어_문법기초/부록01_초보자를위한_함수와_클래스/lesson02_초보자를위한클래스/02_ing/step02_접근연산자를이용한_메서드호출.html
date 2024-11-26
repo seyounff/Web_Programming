@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+
+        <script>
+            /*
+
+             단계02: 접근 연산자를 이용한 함수(메서드)호출
+
+             단계01: 인스턴스 만들기
+
+             단계00: 계산기 클래스 만들기
+              
+             
+             */
+            
+            // 계산기
+            function Calculator(){
+                this.add = function(a,b){
+                    alert("두 수의 합은 "+(a+b)+"입니다.");
+                }
+                this.sub =function(a,b){
+                    alert("두 수의 차는 "+(a-b)+"입니다.");
+                }
+                
+                this.mul=function(a,b){
+                    alert("두 수의 곱은 "+(a*b)+"입니다.");
+                }
+                
+                this.div=function(a,b){
+                    alert("두 수의 나눈 값은 "+(a/b)+"입니다.");
+                }
+            }
+            
+            //순서1) 인스턴스 생성 
+            var cal1 = new Calculator();
+
+            
+
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

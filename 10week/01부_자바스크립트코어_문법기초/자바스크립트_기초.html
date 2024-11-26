@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기초</title>
+    <style>
+        /* 트리 스타일 */
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+        /* 코드 영역 스타일 */
+        .code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            display: none;
+            white-space: pre-wrap;
+        }
+
+        .active {
+            font-weight: bold;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>자바스크립트 기초</h1>
+
+    <!-- 트리 구조 -->
+    <ul>
+        <!-- 문법기초 -->
+        <li onclick="toggleTree(event)">문법기초
+            <ul>
+                <!-- 변수 -->
+                <li onclick="toggleTree(event)">1.1 변수
+                    <ul>
+                        <!-- 변수만들기 -->
+                        <li onclick="toggleTree(event)">1.1.1 변수 만들기
+                            <ul>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson02_변수만들기/01_complete/01_예제01_여러분의나이가_담긴변수.html')">1.1.1.1 나이가 담긴 변수</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson02_변수만들기/01_complete/02_예제02_여러분의_이름_나이가_담긴변수.html')">1.1.1.2 이름과 나이가 담긴 변수</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson02_변수만들기/01_complete/03_예제03_여러분의_이름_나이가_담긴변수_콤마활용.html')">1.1.1.3 이름과 나이가 담긴 변수, 콤마 활용</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson02_변수만들기/01_complete/04_예제04_여러분의_이름_나이가_담긴변수_구분자활용.html')">1.1.1.4 이름과 나이가 담긴 변수, 구분자 활용</li>
+                            </ul>
+                        </li>
+
+                        <!-- 변수에 저장할 수 있는 데이터 종류 -->
+                        <li onclick="toggleTree(event)">1.1.2 변수에 저장할 수 있는 데이터 종류
+                            <ul>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson03_변수에저장할수있는데이터종류/01_complete/01_예제01_숫자데이터_나이몸무게.html')">1.1.2.1 숫자 데이터 (나이, 몸무게 등)</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson03_변수에저장할수있는데이터종류/01_complete/02_예제02_문자데이터_아이디.html')">1.1.2.2 문자 데이터 (아이디, 이름 등)</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson03_변수에저장할수있는데이터종류/01_complete/03_예제03_문자데이터_나이를문자열로.html')">1.1.2.3 문자 데이터 (나이를 문자열로)</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson03_변수에저장할수있는데이터종류/01_complete/04_예제04_논리데이터_로그인유무.html')">1.1.2.4 논리 데이터 (로그인 유무)</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson03_변수에저장할수있는데이터종류/01_complete/05_예제05_논리데이터_날씨표현.html')">1.1.2.5 논리 데이터 (날씨 표현)</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson03_변수에저장할수있는데이터종류/01_complete/06_예제06_undefined_변수에값을대입하지않은경우.html')">1.1.2.6 undefined (변수에 값이 없는 경우)</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson03_변수에저장할수있는데이터종류/01_complete/07_예제07_undefined_함수인자값없이함수를호출하는경우.html')">1.1.2.7 undefined (함수 인자 없이 호출)</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson03_변수에저장할수있는데이터종류/01_complete/08_예제08_undefined_존재하지않는프로퍼티를접근.html')">1.1.2.8 undefined (존재하지 않는 프로퍼티 접근)</li>
+                                <li onclick="loadScriptCode(event, '01장_변수/lesson03_변수에저장할수있는데이터종류/01_complete/09_예제09_null_null값으로데이터를초기화하는경우.html')">1.1.2.9 null (데이터 초기화)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- 코드 영역 -->
+    <div id="code-container" class="code">
+        <pre id="script-code"></pre>
+    </div>
+
+    <script>
+        // 트리 항목 토글
+        function toggleTree(event) {
+            event.stopPropagation();
+            const children = event.target.querySelector('ul');
+            if (children) {
+                children.style.display = (children.style.display === 'none' || children.style.display === '') ? 'block' : 'none';
+            }
+        }
+
+        // 선택된 HTML 파일에서 자바스크립트 코드 불러오기
+        function loadScriptCode(event, fileName) {
+            event.stopPropagation();
+
+            // 코드 영역 초기화
+            const codeContainer = document.getElementById('script-code');
+            codeContainer.textContent = "로딩 중...";
+
+            fetch(fileName)
+                .then(response => response.text())
+                .then(data => {
+                    const scriptTagMatch = data.match(/<script[\s\S]*?>([\s\S]*?)<\/script>/);
+                    if (scriptTagMatch && scriptTagMatch[1]) {
+                        // 스크립트 코드 추출
+                        codeContainer.textContent = scriptTagMatch[1].trim();  // 공백 제거
+                        document.getElementById("code-container").style.display = "block"; // 코드 영역 보이기
+                    } else {
+                        codeContainer.textContent = "스크립트 코드가 없습니다.";
+                    }
+                })
+                .catch(error => {
+                    console.error('파일 로드 오류:', error);
+                    codeContainer.textContent = "파일을 불러오는 데 오류가 발생했습니다.";
+                });
+
+            // 항목 활성화
+            const allItems = document.querySelectorAll('li');
+            allItems.forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

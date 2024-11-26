@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<style>
+    
+    .info {
+        font-size: 14pt;
+    }
+    #start {
+        font-size:14pt;
+    }
+    .panel {
+        width:600px;
+        height:400px;
+        position: relative;
+        border:2px solid #000;
+        margin-top:10px;
+    }
+    
+    .panel #fish {
+        position: absolute;
+        left:250px;
+        top:150px;
+    }
+</style>
+
+<script src="../../../libs/jquery-1.11.0.min.js"></script>
+
+<script>
+
+/*
+ 미션02 : 물고기 잡기 게임 만들기 ver 2.0
+        
+게임은 기존 버전과 달리 게임 시작 버튼을 눌러야 실행됩니다. 게임 시작 버튼을 눌러 보세요.
+그럼 물고기가 랜덤하게 움직이기 시작합니다. 단 물고기는 패널 밖으로 나가지는 않습니다. 
+이 기능 역시 이번 버전에 새롭게 추가된 기능입니다.
+이때 물고기를 클릭하면 기존과 동일하게 점수가 올라 갑니다. 
+게임은 10초 후 “게임 종료”라는 메시지를 출력하며 끝났습니다. 
+이후 물고기를 클릭해도 점수가 올라가지 않습니다.
+
+
+다음 조건에 맞게 만들어 주세요.
+1. 일정 시간 동안 누가 많이 물고기를 클릭하는지 알아보는 간단한 게임입니다.
+2. 물고기 클릭 시 점수를 1점 증가시킨 후 화면에 출력해 주세요.
+3. 물고기 위치를 0.5초마다 한 번씩 랜덤하게 움직이도록 해주세요(핵심).
+4. 10초 후 게임이 종료되게 만들어 주세요.
+5. 가능하면 함수를 활용해 코드를 구조화해 주세요.
+
+*/
+    /*
+     * 
+     * 단계 02
+     *      - 물고기 랜덤하기 움직이기 
+     * 
+     * 단계 01 
+     *      - 전역 변수 생성및 요소 초기화
+     */
+</script>
+<script>
+
+var count =0;
+var $score = null;
+var $fish = null;
+var playing= false;
+var timerID=0;
+
+$(document).ready(function(){
+    /*
+    // 점수 변수        
+    var count=0;
+    
+    // 점수를 출력할 요소 
+    var $score = $("#score");
+    
+    // 여기에 코드를 입력해주세요.
+    // 게임 진행 유무 판단 변수
+    var playing=true;
+    // 물고기에 클릭 이벤트 등록           
+    $("#fish").click(function(){
+
+        if(playing==true){
+            // 점수 증가    
+            count++;
+            $score.html(count);
+        }
+    });
+    
+    // 게임을 5초후에 종료시켜 줍니다.
+    setTimeout(function(){        
+        playing=false;
+        alert("게임이 종료 되었습니다.")
+    },5000) 
+    */
+   
+   // 요소 초기화 
+   init();
+   startGame(); 
+});
+
+// 전역에서 사용할 요소 초기화.
+function init(){
+    $score = $("#score");
+    $fish = $("#fish"); 
+}
+
+// 물고기 움직이기
+function moveFish(){
+    /* 
+        물고기 크기 120*70
+        패널 크기 600*400
+        물고기 x 이동 영역 0~ 480 (600-120)
+        물고기 y 이동 영역 0~ 330 (400-70)
+    */
+    var x = Math.floor(Math.random()*480);
+    var y = Math.floor(Math.random()*330);
+    
+    $fish.css({
+        left:x,
+        top:y
+    })
+}
+
+// 게임 시작 
+function startGame(){
+    
+    timerID = setInterval(function(){
+        // 물고기 움직이기 
+        moveFish();
+    }, 500)  
+}
+
+
+
+
+
+</script>
+</head> 
+<body>
+    <div>
+           <button id="start">게임 시작</button>
+           현재점수 <span id="score">0</span>
+    </div>   
+    
+    <div class="panel">
+           <img src="fish1.png" id="fish">      
+    </div>
+</body>
+
+
+</html>
+
+

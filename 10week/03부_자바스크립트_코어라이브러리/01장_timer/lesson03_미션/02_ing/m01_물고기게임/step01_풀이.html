@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title> </title>
+
+        <style>
+            .info {
+                font-size: 14pt;
+            }
+            .panel {
+                width: 600px;
+                height: 400px;
+                position: relative;
+                border: 2px solid #000;
+            }
+
+            .panel #fish {
+                position: absolute;
+                left: 250px;
+                top: 150px;
+            }
+        </style>
+
+        <script src="../../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+             미션01 :
+             이번 미션은 타이머 함수를 활용한 일명 “물고기 잡기 게임” 만들기입니다.
+             요구사항에 맞게 만들어주세요.
+                 1. 5초 동안 누가 많이 물고기를 클릭하는지 알아보는 간단한 게임 만들기입니다.
+                 2. 물고기 클릭 시 1점 획득.
+                 3. 게임이 종료된 후 물고기 클릭 시 게임 점수가 올라가서는 안 됩니다.
+                 4. 점수는 획득 시 바로 화면에 출력해 주세요.
+             */
+            /*
+             단계02:
+             - 게임 종료 처리
+
+             단계01:
+             - 점수 처리
+             */
+            $(document).ready(function () {
+                var count = 0;
+                var $score = $("#score");
+
+                // 여기에 코드를 입력해주세요.
+
+            });
+
+        </script>
+    </head>
+    <body>
+        <div>
+            현재점수 <span id="score">0</span>
+        </div>
+        <div class="panel">
+            <img src="fish1.png" id="fish">
+        </div>
+    </body>
+
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script>
+        /*
+
+         미션 04: 학점 구하기
+         이번 예제는 학점을 구하기 예제입니다. 하나의 평균 값을 입력받아 요구사항에 맞게 출력해주세요.
+
+         요구사항:
+         1. 학점은 다음과 같이 계산해주세요.
+         입력 값이 100~90이면 A학점
+         입력 값이 89~80이면 B학점
+         입력 값이 79~70이면 C학점
+         입력 값이 69~60이면 D학점
+         입력 값이 59~이면 F학점
+
+         2. 예를 들어 입력 값이 100이면 다음과 같이 출력해주세요.
+         100 점수의 점수의 학점은? A 입니다.
+
+
+         입력값 : 100
+         출력값 : "100 점수의  학점은? A 입니다."
+
+         */
+
+        // 1. 평균 점수 입력받기.
+        var value = window.prompt("평균 점수를 입력해주세요.");
+
+        // 2. 문자를 숫자로.
+        value=parseInt(value);
+
+        // 3. 학점 구하기
+        var grade ="F";
+        if(value>=90 && value<=100)
+            grade="A";
+        else if(value>=80 && value<=89)
+            grade="B";
+        else if(value>=70 && value<=79)
+            grade="C";
+        else if(value>=60 && value<=69)
+            grade="D";
+        else
+            grade="F";
+
+        // 4. 학점 출력
+        alert(value+ " 점수의 학점은? "+ grade+"  입니다.");
+
+
+    </script>
+</head>
+
+<body></body>
+</html>

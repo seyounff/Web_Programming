@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> </title>
+
+<style>
+    div.image-container{
+        position: relative;
+    }
+    
+    div.image-container img{
+        position: absolute;
+        left:0;
+        top:0;
+        width:120px;
+    }
+</style>
+
+
+
+    <script type="text/javascript"  src="../../../libs/jquery-1.11.0.min.js"> </script>
+    <script>
+
+        /*
+         미션 04: 심플 갤러리를 함수로 만들기 1
+         이번 미션은 1부 06장 for문 편에서 만든 심플 갤러리를 실행 예처럼 동작하게 simpleGallery() 함수 버
+         전으로 만드는 것입니다. 기존 코드를 활용해 지금부터 simpleGallery()를 완성해 주세요.
+
+         실행 예 1
+         simpleGallery(5,150,150);
+
+         실행 예 2
+         simpleGallery(3,200,200);
+
+         */
+
+        $(document).ready(function(){
+
+            // 이미지 찾기.
+            var $images = $("#container1 img");
+
+            // 이미지 개수 구하기.
+            var length = $images.length;
+
+            // 이미지 배열하기.
+            for(var i=0;i<length;i++){
+                // n번째 이미지 구하기
+                var $img = $images.eq(i);
+
+                // 위치 값 구하기
+                var x = 100+((i%3)*200);
+                var y = 100+(parseInt(i/3)*200);
+
+                // 위치 설정
+                $img.css({
+                    left:x,
+                    top:y
+                });
+            }
+        });
+
+        
+    </script>
+</head>
+    
+<body>
+    <div class="image-container" id="container1">
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >   
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+
+    <style>
+        div.image-container{
+            position: relative;
+            border:1px solid #000;
+            height:600px;
+        }
+
+        div.image-container img{
+            position: absolute;
+            left:0;
+            top:0;
+            width:120px;
+        }
+    </style>
+
+
+    <script type="text/javascript"  src="../../../libs/jquery-1.11.0.min.js"> </script>
+    <script>
+    /*
+     미션 05: 심플 갤러리를 함수로 만들기 2
+
+     미션 04에서 멋있게 만든 심플 갤러리를 수정해 실행화면처럼 #container1 이미지는 가로로 6개씩
+     150*150 크기로 배열되게 출력하고, #container2 이미지는 가로로 4개씩 200*200 크기로 배열되게 만
+     들어주세요. 단, 주의할 점이 하나 있는데요. 실행화면은 #container1과 #container2 각각 따로 실행해
+     캡처한 내용이 아니라 한 화면에 동시에 실행된 화면이니 이에 맞게 처리해 주세요.
+     */
+        $(document).ready(function(){
+
+            // 이미지 찾기.
+            var $images = $("#container1 img");
+
+            // 이미지 개수 구하기.
+            var length = $images.length;
+
+            // 이미지 배열하기.
+            for(var i=0;i<length;i++){
+                // n번째 이미지 구하기
+                var $img = $images.eq(i);
+
+                // 위치 값 구하기
+                var x = 100+((i%3)*200);
+                var y = 100+(parseInt(i/3)*200);
+
+                // 위치 설정
+                $img.css({
+                    left:x,
+                    top:y
+                });
+            }
+        });
+
+    </script>
+</head>
+    
+<body>
+    
+    <p>container1</p>
+    <div class="image-container" id="container1">
+       
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >   
+    </div>
+     <p>container2</p>
+     <div class="image-container" id="container2">
+         
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >   
+    </div>
+</body>
+</html>

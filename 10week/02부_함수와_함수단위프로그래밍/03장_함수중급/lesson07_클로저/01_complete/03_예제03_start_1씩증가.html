@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+         예제 03: 버튼을 클릭하면 클릭할 때마다 1씩 증가시켜 주세요.
+         */
+        $(document).ready(function() {
+
+            $("#btnStart").click(function () {
+                start();
+                document.write("시작합니다.");
+            });
+
+            function start() {
+                var count = 0;
+                setInterval(function () {
+                    count++;
+                    document.write(count);
+                }, 1000);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btnStart">시작</button>
+</body>
+</html>

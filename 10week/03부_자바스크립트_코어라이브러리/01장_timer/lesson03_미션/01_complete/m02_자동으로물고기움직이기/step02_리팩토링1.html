@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+            }
+            #panel {
+                width: 600px;
+                height: 300px;
+                border: 1px solid #999;
+                position: relative;
+            }
+
+            #bar {
+                position: absolute;
+                left: 50px;
+                top: 190px;
+                width: 500px;
+                height: 20px;
+                background: #F30;
+            }
+
+            #fish {
+                position: absolute;
+                left: 50px;
+                top: 120px;
+            }
+
+            #nav {
+                text-align: center;
+                width: 600px;
+            }
+        </style>
+
+        <script type="text/javascript"  src="../../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+             미션02:
+                 1. 시작 버튼을 누르면 물고기가 좌우로 자동으로 움직이게 해주세요.
+                 (기존에는 버튼을 클릭할 때마다 물고기가 조금씩 움직여서 손가락이 너무 아팠잖아요? 이걸 자동으로 만드는 거죠~)
+                 2. 정지 버튼을 누르면 물고기를 멈춰 주세요. 다시 시작 버튼을 누르면 물고기가 움직이게 해주세요.
+                 3. 가능한 함수를 활용해 소스 코드를 구조화해 주세요.
+
+             팁!
+                 - $물고기를 움직이는 방법은 물고기.css("left", 위치값)를 해주면 된답니다.
+
+             */
+            /*
+             단계02
+                - 리팩토링1: 소스 코드 구조화
+
+             단계01
+                - 구현
+
+             */
+
+            var $fish = null;
+            // 물고기가 한번에 움직일 거리
+            var step = 50;
+            var timerID = 0;
+
+            $(document).ready(function() {
+                init();
+                initEvent();
+            });
+
+            // 요소 초기화
+            function init() {
+                //물고기 노드 구하기.
+                $fish = $("#fish");
+            }
+
+            // 이벤트 초기화
+            function initEvent() {
+
+                // 물고기 움직이기
+                $("#btnStart").click(function() {
+
+                });
+
+                // 물고기 멈추기
+                $("#btnStop").click(function() {
+
+                })
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <div>
+
+            <div id="panel">
+                <div id="bar"></div>
+                <img src="fish1.png" id="fish">
+            </div>
+            <div id="nav">
+                <button id="btnStart">
+                    시작
+                </button>
+                <button id="btnStop">
+                    멈춤
+                </button>
+            </div>
+        </div>
+    </body>
+
+</html>

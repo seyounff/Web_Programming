@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <style>
+            #output {
+                width: 400px;
+                height: 200px;
+                text-align: center;
+                line-height: 200px;
+                vertical-align: center;
+                border: 2px solid #000;
+            }
+        </style>
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+             예제 02: 입력받은 문자열을 1초마다 한 문자씩 출력하기
+
+             입력받은 문자열을 1초에 한 문자씩 #panel에 출력해 주세요.
+             모든 문자를 출력하면 “종료됐습니다.” 라는 알림메시지를 출력한 후 타이머를 정지시켜 주세요.
+             */
+            $(document).ready(function() {
+                var str = window.prompt("문자를 입력해 주세요.");
+
+                var $output = $("#output");
+                // 여기에 풀이를 입력해 주세요.
+                var timerID = setInterval(function() {
+                    console.log("여기에 문자를 출력하는 구문을 작성할 거예요");
+
+                }, 1000);
+            })
+        </script>
+
+    </head>
+
+    <body>
+        <div id="output">
+
+        </div>
+    </body>
+</html>

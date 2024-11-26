@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+
+
+<!--
+	미션 : 	
+		
+- 1초에 한번씩 이미지를 변환시켜주세요.(일종의 배너입니다.)
+  단, 이미지가 10개이니 10번째 이미지 출력후에 다시 1번째 이미지가 나오게 해주세요.
+		
+- 힌트 : 이미지 변경방법.
+	$image.attr("src", 이미지이름);
+			
+-->
+<script src="./libs/jquery-1.11.0.min.js"></script>
+<script>
+	
+	
+	
+// 소스를 여기에 출력해주세요.
+	
+$(document).ready(function(){	
+	
+	var count=1;
+	var max = 8;	
+	var $image  = $("#img1");
+	
+	// 여기에 풀이를 해주세요.
+	setInterval(function(){
+		count++;
+		$image.attr("src","banners/"+count+".png");
+		
+		if(count>=max)
+			count=0;
+		
+	}, 500);
+});
+
+</script>
+</head>	
+	<body>
+		<img src="banners/1.png" id="img1">
+	</body>
+</html>
+

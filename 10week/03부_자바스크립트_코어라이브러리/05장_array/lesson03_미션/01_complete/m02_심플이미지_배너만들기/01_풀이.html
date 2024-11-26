@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .banner {
+                width: 400px;
+                height: 200px;
+                position: absolute;
+                border: 2px solid #000;
+            }
+
+            #banner1 {
+                top: 100px;
+                left: 100px;
+            }
+
+            #banner2 {
+                left: 550px;
+                top: 100px;
+                width: 200px;
+                height: 100px;
+            }
+        </style>
+        <script src="../../../libs/jquery-1.11.0.min.js"></script>
+
+        <script>
+            /*
+             미션 02: 심플 이미지 배너 만들기
+             다음 살펴보면 다음 이미지 파일들을 순차적으로 출력하는 심플 이미지 배너입니다.
+             logo_01.jpg ~ logo_08.jpg
+             하지만 아쉽게도 이 코드는 출력할 수 있는 이미지가 반드시 logo_0으로 시작해야 하며
+             이미지를 순차적으로 출력할 수밖에 없는 치명적인 단점을 가지고 있습니다.
+             이번 미션은 바로 이런 단점을 가진 코드 배열을 활용해 좀더 유지보수하기 쉽게 변경하는 것입니다.
+
+             */
+            $(document).ready(function() {
+                var currentIndex = 0;
+                var $banner = $(".banner");
+
+                /*
+                 * 이미지는 images/logo_01.jpg부터 logo_08.jpg 까지 8개가 있습니다.
+                 */
+                var imgList = ["logo_01.jpg", "logo_02.jpg", "logo_03.jpg", "logo_04.jpg", "logo_05.jpg", "logo_06.jpg", "logo_07.jpg", "logo_08.jpg"];
+                // 1초에 한번씩 함수 호출
+                setInterval(function() {
+                    // 다음에 등장할 배너 인덱스 값 구하기
+                    currentIndex++;
+                    if (currentIndex > imgList.length)
+                        currentIndex = 0;
+
+                    // 다음 이미지 이름 구하기
+                    var imgName = imgList[currentIndex];
+                    // 다음 이미지 출력
+                    $banner.attr("src", "./images/" + imgName);
+                }, 1000)
+            })
+
+        </script>
+
+    </head>
+
+    <body>
+        <img src="images/logo_01.jpg" class="banner" id="banner1">
+    </body>
+</html>

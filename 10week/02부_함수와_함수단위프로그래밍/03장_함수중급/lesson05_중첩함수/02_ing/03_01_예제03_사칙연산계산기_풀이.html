@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Untitled Document</title>
+
+    <script type="text/javascript">
+        /*
+
+         예제03: 중첩 함수를 이용해 사칙연산 계산기를 만들어 주세요.
+
+
+         */
+
+        function calculator(op, num1, num2) {
+            var result = "";
+
+            switch(op) {
+                case "+" :
+                    result = num1 + num2;
+                    break;
+                case "-" :
+                    result = num1 - num2;
+                    break;
+                case "*" :
+                    result = num1 * num2;
+                    break;
+                case "/" :
+                    result = num1 / num2;
+                    break;
+
+                default :
+                    result = "지원하지 않는 연산자입니다";
+            }
+            return result;
+        }
+
+
+        document.write("1 결과 = " + calculator("+", 20, 10), "<br>");
+        document.write("2 결과 = " + calculator("-", 20, 10), "<br>");
+        document.write("3 결과 = " + calculator("*", 20, 10), "<br>");
+        document.write("4 결과 = " + calculator("/", 20, 10), "<br>");
+        document.write("5 결과 = " + calculator("%", 20, 10), "<br>");
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+</html>

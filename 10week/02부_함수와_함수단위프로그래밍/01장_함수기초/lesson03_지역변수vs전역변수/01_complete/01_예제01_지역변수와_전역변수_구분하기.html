@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>예제</title>
+    
+    <script>
+    /*
+     예제01: 지역변수와 전역변수 구분하기
+     다음 예제를 실행하면 1,2,3,4,5에는 어떤 값이 출력될까요?
+
+     */
+
+        var name="test1";
+        function func1(){
+            var name="test2";
+            document.write("2. name = "+name,"<br>");
+        }
+
+        function func2(){
+            var name="test3";
+            document.write("3. name = "+name,"<br>");
+        }
+
+        function func3(){
+            name="test20";
+            document.write("4. name = "+name,"<br>");
+        }
+
+        document.write("1. name = "+name,"<br>");
+        func1();
+        func2();
+        func3();
+        document.write("5. name = "+name,"<br>");
+
+    /*
+     결과 :
+         1. name = test1
+         2. name = test2
+         3. name = test3
+         4. name = test20
+         5. name = test20
+
+     */
+
+    </script>
+    
+    </head>
+    
+    	
+    <body>
+    	
+    </body>
+</html>	

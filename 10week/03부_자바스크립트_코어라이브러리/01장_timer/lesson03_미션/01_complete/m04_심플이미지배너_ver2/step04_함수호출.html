@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>배너</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .banner {
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            border: 2px solid #000;
+        }
+        #banner1 {
+            top: 100px;
+            left: 100px;
+        }
+        #banner2 {
+            left: 550px;
+            top: 100px;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+    <script src="../../../libs/jquery-1.11.0.min.js"></script>
+
+    <script>
+        /*
+         미션04: 심플 이미지 배너 만들기 ver 2.0
+            1. 일정한 시간에 한 번씩 배열에 들어있는 이미지를 순차적으로 전환시켜 주세요.
+            2. 전환 시간을 설정할 수 있게 만들어 주세요.
+            3 이미지가 계속해서 무한 롤링되게 만들어 주세요. 즉, 마지막 번째 이미지가 출력된 상태에서 0번째 이미지가 출력돼야 합니다.
+            4 함수를 활용해 하나의 함수로 두 개의 배너가 동작할 수 있게 만들어 주세요.
+        */
+        /*
+          단계04
+                - 함수 호출
+
+          단계03
+                - 매개변수 만들기
+
+          단계02
+                - 이미지 전환 기능을 함수에 포장하기
+
+          단계01
+                - 함수 만들기
+
+         */
+        $(document).ready(function() {
+            var imgList1 = ["logo_01.jpg", "logo_02.jpg", "logo_03.jpg", "logo_04.jpg", "logo_05.jpg"];
+            var imgList2 = ["logo_02.jpg", "logo_05.jpg", "logo_03.jpg", "logo_04.jpg", "logo_01.jpg"];
+
+            // 첫 번째 배너
+            banner("#banner1", imgList1, 1000);
+            // 두 번째 배너
+            banner("#banner2", imgList2, 3000);
+        })
+        // 배너
+        function banner(selector, imgList, speed) {
+            var currentIndex = 1;
+            var $banner = $(selector);
+
+            // 1초에 한번씩 함수 호출
+            setInterval(function() {
+                // 다음에 등장할 배너 인덱스 값 구하기
+                currentIndex++;
+                if (currentIndex >= imgList.length)
+                    currentIndex = 0;
+
+                // 다음 이미지 이름 구하기
+                var imgName = imgList[currentIndex];
+                // 다음 이미지 출력
+                $banner.attr("src", "./images/" + imgName);
+            }, speed)
+        }
+    </script>
+</head>
+
+<body>
+    <img src="images/logo_01.jpg" class="banner" id="banner1">
+    <img src="images/logo_02.jpg" class="banner" id="banner2">
+</body>
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #output {
+            width: 200px;
+            height: 200px;
+            border: 4px solid #000;
+            margin: 50px;
+
+            font-size: 100px;
+            text-align: center;
+            line-height: 200px;
+            vertical-align: middle;
+
+        }
+    </style>
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+    <script>
+        /*
+         예제 03: 1초에 한번씩 숫자 값 출력하기
+         변수 값을 1초에 한 번 1씩 증가시키고 이 값을 화면에 출력해 주세요.
+         단, 정지버튼(#stip)을 누르면 더 이상 실행되지 않게 타이머 함수를 중지시켜 주세요.
+
+         */
+        $(document).ready(function() {
+
+            var $output = $("#output");
+            var count = 0;
+            var timerID=0;
+            timerID = setInterval(function() {
+                // 값 증가
+                count++;
+                // 값을 출력
+                $output.text(count);
+            }, 1000);
+
+
+            $("#stop").click(function() {
+                // 여기에 풀이를 입력해주세요.
+                clearInterval(timerID);
+            });
+
+        })
+
+    </script>
+
+
+</head>
+
+<body>
+<button id="stop">멈춤</button>
+<div id="output">
+    0
+</div>
+</body>
+</html>

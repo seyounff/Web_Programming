@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+    <script>
+        /*
+         예제 : 지역변수, 전역변수, 매개변수 인지를 구분해주세요.
+
+         */
+
+        var globalV = "전역변수";
+
+        window.onload = function() {
+            var local1 = "지역변수";
+            func1(100, 200);
+        }
+        function func1(num1, num2) {
+            var local1 = "지역변수";
+
+            document.write("매개변수 num1=" + num1 + ", num2=" + num2);
+        }
+
+    </script>
+</head>
+
+<body></body>
+</html>

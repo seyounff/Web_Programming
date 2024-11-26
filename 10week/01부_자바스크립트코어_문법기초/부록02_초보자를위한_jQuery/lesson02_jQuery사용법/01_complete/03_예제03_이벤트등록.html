@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+    <script>
+
+
+
+    </script>
+    
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+         예제 03: 확인 버튼을 클릭하면 “안녕하세요.” 메시지를 출력해 주세요.
+         */
+        $(document).ready(function(){
+            $("#btnCheck").on("click",function(){
+                alert("환영합니다. ");
+            });
+            /*
+            // 또는
+            $("#btnCheck").click(function(){
+                alert("환영합니다. ");
+            });
+            */
+        })
+        
+    </script>
+
+</head>
+
+<body>
+    <button id="btnCheck">확인</button>
+</body>
+</html>

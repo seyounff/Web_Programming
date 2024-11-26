@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	
+	
+    <script>
+    /*
+    예제: 예제 03 페이지 수 구하기
+    다음에 등장하는 풀이 전 코드는 게시물에 따른 페이지수를 구하는 예제입니다.
+    예를 들어 총 게시물이 105개이고 한 페이지에 10개씩 출력된다고 해보죠. 이때 페이지 수는 11페이지가 출력됩니다.
+    여러분이 할 일은  Math.ceil() 메서드 또는 Math.floor() 메서드를 활용해 코드를 좀더 간결하게 만드는 작업입니다.
+
+     */
+        var itemCount = 105;
+        var pages = pasrseInt(itemCount/10);
+        if(itemCount%10)
+            pages++;
+
+        alert("전체 페이지 수는  = "+pages);   // 결과 11
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+</html>

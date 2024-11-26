@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+
+        <script>
+            /*
+             예제 : 지역변수, 전역변수를 구분해주세요.
+
+             */
+
+            var globalV = "전역변수";
+
+            window.onload = function() {
+                var local1 = "지역변수";
+            }
+            function func1() {
+                var local1 = "지역변수";
+            }
+
+            function func2() {
+                document.write(globalV);
+            }
+
+        </script>
+    </head>
+
+    <body></body>
+</html>

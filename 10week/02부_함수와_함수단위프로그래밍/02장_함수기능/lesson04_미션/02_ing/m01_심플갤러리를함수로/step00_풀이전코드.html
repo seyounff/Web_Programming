@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>미션</title>
+
+    <style>
+        div.image-container {
+            position: relative;
+        }
+
+        div.image-container img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 120px;
+        }
+    </style>
+
+    <script type="text/javascript"  src="../../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+
+         미션 01 심플 갤러리를 함수로 만들기
+         이번 미션은 01부 06장 반복문 for에서 만든 심플 이미지 갤러리를 함수를 이용해 만드는 것입니다.
+            요구사항:
+            - 이미지 배열 시작 위치는 100*100 위치로 해주세요.
+            - 시작 시 이미지를 2열 200*200 크기로 출력해 주세요.
+            - 시작 버튼 클릭 시 이미지를 3열 150*150 크기로 출력해 주세요.
+            - 함수를 이용해 코드를 최대한 유지보수 하기 쉽게 만들어 주세요.
+
+
+         실행 예1
+             simpleGallery(5,150,150);
+             이미지 크기는 150x150, 배열은 가로로 5개씩 정렬
+
+
+         실행 예2
+             simpleGallery(3,200,200);
+             이미지 크기는 200x200, 배열은 가로로 3개씩 정렬
+
+
+         힌트:
+             - 문서에서 이미지 노드 찾아 변수에 저장하기
+             var $images = $("#container1 img");
+    
+             - N번째 인덱스에 해당하는 이미지 접근하기(N은 0부터 시작)
+             var $img0=$images.eq(0);   // 0번째 이미지 접근
+    
+             - 이미지 위치 설정하기
+             $img0.css({left:이동위치, top:이동위치});
+
+         */
+        $(document).ready(function() {
+
+            // 이미지 찾기.
+            var $images = $("#container1 img");
+            
+            $("#btnStart").click(function(){
+                // 이미지 개수 구하기.
+                var length = $images.length;
+    
+                // 이미지 배열하기.
+                for (var i = 0; i < length; i++) {
+                    // n번째 이미지 구하기
+                    var $img = $images.eq(i);
+    
+                    // 위치 값 구하기
+                    var x = 100 + ((i % 3) * 200);
+                    var y = 100 + (parseInt(i / 3) * 200);
+    
+                    // 위치 설정
+                    $img.css({
+                        left : x,
+                        top : y
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btnStart">시작</button>
+    <div class="image-container" id="container1">
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >
+    </div>
+</body>
+</html>

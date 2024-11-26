@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+            }
+            #panel {
+                width: 600px;
+                height: 500px;
+                border: 1px solid #999;
+                position: relative;
+            }
+
+            #fish {
+                position: absolute;
+                left: 50px;
+                top: 120px;
+            }
+
+            #nav {
+                text-align: center;
+                width: 600px;
+            }
+        </style>
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+
+            예제01: 함수 나누기 연습
+            이번 예제는 01부 04장 조건문if에서 풀었던 미션입니다. 함수를 이용해 코드를 그룹화해 주세요
+
+            단계02 - 함수 나누기
+
+            단계01:  여러 가지 기능을 하는 함수 찾기
+                 ready() 내부함수는 다음과 같이 총 3가지 기능을 하고 있음.
+                 1. 변수 (물고기) 생성 및 초기화
+                 2. 이벤트 처리
+                 3. 물고기 움직이기
+
+
+            */
+
+            // 전역변수 선언
+            var $fish = null;
+
+            $(document).ready(function() {
+                init();
+                initEvent();
+            });
+
+            // 전역변수는 모두 이곳에서 초기화 시켜 주세요.
+            function init() {
+                $fish = $("#fish");
+            }
+
+            // 이벤트 초기화 하기
+            // 이벤트와 관련된 내용은 모두 이곳에 넣어주세요.
+            function initEvent() {
+                $("#btnStart").click(function() {
+                    // 물고기 위치 값 구하기
+                    var x = parseInt($("#txtX").val());
+                    var y = parseInt($("#txtY").val());
+                    // 물고기 움직이는 함수 호출
+                    moveFish(x, y);
+                });
+            }
+
+            // 물고기 움직이기
+            // 이곳엔 오직 물고기 움직이는 기능만 있답니다.
+            function moveFish(x, y) {
+                if ((x >= 0 && x <= 500) && y >= 0 && y <= 300) {
+                    $fish.css({
+                        left : x,
+                        top : y
+                    });
+
+                } else {
+                    alert("입력된 값이 너무 큽니다. 다시 입력해주세요.");
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <div id="panel">
+
+                <img src="fish.png" id="fish">
+            </div>
+
+            <div id="nav">
+                <label>x값 입력 : </label>
+                <input id="txtX"> </input>
+                <br>
+                <label>y값 입력 : </label>
+                <input id="txtY"> </input>
+                <br>
+                <button id="btnStart">
+                    물고기 움직이기
+                </button>
+
+            </div>
+        </div>
+    </body>
+</html>

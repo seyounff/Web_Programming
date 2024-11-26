@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>예제</title>
+
+    <script>
+        /*
+         예제 01: 함수 만드는 방법 3가지
+         일반적인 방식과 객체 방식
+         */
+        function hello(name){
+            alert(name+"님 환영합니다.");
+        }
+        hello("ddanodngne");
+
+        // 객체 방식
+        var hello2 = new Function("name", "alert(name+'님 환영합니다.');");
+        hello2("ddanodngne");
+
+    </script>
+</head>
+
+	
+<body>
+	
+</body>
+</html>	

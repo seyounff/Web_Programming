@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+    <script src="../../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+         미션 01: 콜백 함수 활용
+         버튼을 10번 클릭하면 “완료되었습니다.”라는 메시지를 checkCount()에서 처리하지 말고
+         콜백 함수를 이용해 분리해 주세요.
+         */
+
+        $(document).ready(function() {
+            checkCount(showMessage);
+        });
+
+        function showMessage(){
+            alert("왼료되었습니다.");
+        }
+
+        function checkCount(callback){
+            var count=0;
+            $("#btnStart").click(function(){
+                count++;
+                if(count>=10)
+                    callback();
+            })
+        }
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <button id="btnStart">시작</button>
+</body>
+</html>

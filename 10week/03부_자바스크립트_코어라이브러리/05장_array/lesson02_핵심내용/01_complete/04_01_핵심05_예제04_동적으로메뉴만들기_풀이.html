@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            ul.menu {
+                list-style: none;
+                border: 1px solid #000;
+                height: 40px;
+                padding: 20px;
+            }
+
+            ul.menu li {
+                display: block;
+                float: left;
+                padding: 10px;
+                border: 1px solid #000;
+                margin-right: 10px;
+            }
+        </style>
+
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+             예제 04: 문자열로 된 메뉴 항목을 동적으로 추가하기
+             풀이 전 코드에서 변수 menuItemData에는 메뉴 아이템 정보가 문자열로 들어 있습니다(메뉴 구분은 콤마).
+             이 정보를 배열로 만들어 배열 개수만큼 #menu에 메뉴 항목을 동적으로 추가해 주세요.
+             */
+            $(document).ready(function() {
+                var $menu = $(".menu");
+                var menuData = "menu1,menu2,menu3,menu4";
+                // 여기에 풀이를 입력해주세요.
+
+                // 문자열 메뉴 아이템 정보를 배열 메뉴 아이템 정보로 변경
+                var menuItems = menuData.split(",");
+
+                // 메뉴 개수 만큼 루프 돌기 =
+                for (var i = 0; i < menuItems.length; i++) {
+                    // i번째 배열 요소를 메뉴 아이템으로 만들기
+                    var newMenuItem = "<li>" + menuItems[i] + "</li>";
+                    // 동적으로 메뉴 아이템 추가
+                    $menu.append(newMenuItem);
+                }
+            })
+
+        </script>
+    </head>
+    <body>
+        <ul class="menu">
+            <li>
+                메뉴1
+            </li>
+            <!-- 여기에 메뉴를 추가해 주세요 -->
+        </ul>
+    </body>
+</html>
