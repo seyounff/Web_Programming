@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배달의민족 소개</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @font-face {
+            font-family: 'BMHANNAPro';
+            src: url('font/BMHANNAAir_ttf.ttf') format('truetype');
+            font-weight: bolder;
+            font-style: normal;
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+    <div class="sidebar">
+        <ul>
+            <li><a href="#company">회사 소개</a></li>
+            <li><a href="#deliver">서비스</a></li>
+            <li><a href="#employment">채용 정보</a></li>
+            <li><a href="#vision">비전</a></li>
+            <li><a href="#news">공지 사항</a></li>
+        </ul>
+    </div>
+    <div class="header">
+        <div class="title">
+            배달의민족
+        </div>
+        <nav class="menu">
+            <a href="https://www.facebook.com/smartbaedal"><img src="image/페이스북.png" alt="페이스북"></a>
+            <a href="https://www.instagram.com/baemin_official/#"><img src="image/인스타그램.png" alt="인스타그램"></a>
+            <a href="https://blog.naver.com/smartbaedal"><img src="image/블로그.png" alt="블로그"></a>
+            <a href="https://www.youtube.com/user/smartbaedal2"><img src="image/유튜브.png" alt="유튜브"></a>
+        </nav>
+    </div>
+
+    <script>
+        function toggleDetails(detailsId, button) {
+            const details = document.getElementById(detailsId);
+            const otherDetails = document.querySelectorAll('.section .details');
+            otherDetails.forEach(d => {
+                if (d !== details) d.style.display = "none";
+            });
+
+            if (details.style.display === "none") {
+                details.style.display = "block";
+                button.textContent = "접기";
+            } else {
+                details.style.display = "none";
+                button.textContent = "자세히보기";
+            }
+        }
+    </script>
+
+    <div id="company" class="section">
+        <div class="text">
+            <h1>우아한형제들 <br>배달의민족을 <br> 만들다</h1>
+            <p>우아한형제들은 배달의민족을 개발한 회사로, <br>
+            김봉진 대표가 2010년 앱 출시 후 5개월 만에 설립했습니다.</p>
+        </div>
+        <div class="hide" onclick="toggleDetails('moreDetails1', this)">자세히보기</div>
+        <div id="moreDetails1" class="details" style="display: none;">
+            <p>배달의민족은 김봉진 대표가 설립한 '우아한형제들'에서 <br>
+                개발한 배달 서비스 플랫폼입니다. 애플리케이션은 <br>
+                2010년 6월에 먼저 출시되었고, <br>
+                그 후 5개월 뒤에 회사가 설립되었습니다. <br>
+                브랜드 이름은 '배달의 민족'이라는 중의적 의미에서 비롯되었으며,<br>
+                젊은 세대들이 자주 이용하는 배달 서비스를 상징합니다.</p>
+        </div>
+        <div class="imageCompany">
+            <img src="image/회사.png" alt="회사 이미지">
+        </div>
+    </div>
+
+    <div id="deliver" class="section">
+        <div class="text">
+            <h1>AI와 로봇 <br>모든것을 <br> 배달한다</h1>
+            <p>배달의민족은 음식과 생활용품을 <br>
+                AI와 로봇을 통해 빠르고 편리하게 배달합니다. 
+            </p>
+        </div>
+        <div class="hide" onclick="toggleDetails('moreDetails2', this)">자세히보기</div>
+        <div id="moreDetails2" class="details" style="display: none;">
+            <p>배달의민족은 IT 기술로 우리의 식문화와 생활을 혁신하며, <br>
+                음식부터 생활용품, 신선식품까지 배달을 제공합니다. <br>
+                배민로봇과 AI 추천 시스템을 통해 <br>
+                더 편리하고 빠른 서비스를 제공하고 있습니다.</p>
+        </div>
+        <div class="imageDeliver">
+            <img src="image/배달.png" alt="배달 이미지">
+        </div>
+    </div>
+
+    <div id="employment" class="section">
+        <div class="text">
+            <h1>새로운<br>인재를 모집 중</h1>
+            <p>배달의민족은 인재를 찾고 있습니다. <br>
+                다양한 직무에 걸쳐 훌륭한 인재를 모집합니다.</p>
+        </div>
+        <a href="https://career.woowahan.com/" target="_blank" class="no-underline">여기를 클릭하여 채용 정보를 확인해보세요!</a>
+        <div class="imageEmployment">
+            <img src="image/고용.png" alt="고용 이미지">
+        </div>
+    </div>
+
+    <div id="vision" class="section">
+        <div class="text">
+            <h1>문 앞으로<br> 배달되는 <br>일상의 행복</h1>
+            <p>우아한형제들은 1등 배달앱 배달의민족으로<br>
+                 음식 문화를 선도하고 있습니다.<br>
+            </p>
+        </div>
+        <div class="hide" onclick="toggleDetails('moreDetails3', this)">자세히보기</div>
+        <div id="moreDetails3" class="details" style="display: none;">
+            <p>'배민1'으로 더 빠르게 배달 받을 수 있고,<br>  
+                '배민쇼핑라이브'를 보면서 판매자와 직접 소통할 수도 있습니다.<br>         
+                'B마트'로 집에서 장보기까지 할 수 있습니다.</p>
+        </div>
+        <div class="imageVision">
+            <img src="image/배민아이콘.png" alt="비전 이미지">
+        </div>
+    </div>
+
+    <div id="news" class="section">
+        <div class="text">
+            <a href="https://www.woowahan.com/newsroom/report?page=1" target="_blank" class="no-underline"><h1>배달의민족 바로가기</h1></a>
+            <p>배달의민족의 최신 뉴스 및 공지 사항을 확인하세요.</p>
+        </div>
+     </div>
+
+    <div class="footer">
+        © 2024 배달의민족 | 2020675071 한세윤
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const sections = document.querySelectorAll('.section');
+
+        window.addEventListener('wheel', function(event) {
+            if (event.deltaY > 0) {
+                currentIndex = Math.min(currentIndex + 1, sections.length - 1);
+            } else {
+                currentIndex = Math.max(currentIndex - 1, 0);
+            }
+
+            sections[currentIndex].scrollIntoView({ behavior: 'smooth' });
+        });
+
+        const observerOptions = {
+            root: null, 
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script src="sideBar_Action.js"></script>
+</body>
+</html>

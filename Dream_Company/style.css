@@ -1,0 +1,351 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #2AC1BC;
+    font-family: 'BMHANNAPro', sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 6rem;
+}
+
+.title {
+    color: white;
+}
+
+.header {
+    background-color: rgba(42, 193, 188, 0.8);
+    color: white;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: none;
+    border-bottom: none;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    scroll-margin-top: 6rem;
+    padding: 12rem 2rem;
+    background-color: #2AC1BC;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: none;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+    height: 100vh;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text {
+    text-align: left;
+}
+
+.text h1 {
+    color: white;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+
+.text p {
+    color: white;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    font-family: sans-serif;
+}
+
+.hide {
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.hide:hover {
+    text-decoration: underline;
+}
+
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer a {
+    color: #2AC1BC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    background-color: #2AC1BC;
+}
+
+.menu {
+    position: absolute !important;
+    right: 0px !important;
+    bottom: 50px !important;
+    max-width: 200px !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 1px !important; 
+    display: flex !important; 
+    gap: 15px !important; 
+}
+
+.menu img {
+    height: auto;
+    max-width: 200px;
+    width: 100%;
+    object-fit: contain;  
+}
+#company .imageCompany {
+    position: absolute !important;
+    right: 40px !important;
+    bottom: 100px !important;
+    max-width: 400px !important;
+    width: 100% !important;
+    height: auto !important;
+}
+#company .imageCompany img{
+    height: auto;
+    max-width: 1110px;
+    width: 100%;
+}
+#deliver .imageDeliver {
+    position: absolute !important;
+    right: 40px !important;
+    bottom: 100px !important;
+    max-width: 600px !important;
+    width: 100% !important;
+    height: auto !important;
+}
+#deliver .imageDeliver img{
+    height: auto;
+    max-width: 1110px;
+    width: 100%;
+}
+#employment .imageEmployment {
+    position: absolute !important;
+    right: 40px !important;
+    bottom: 70px !important;
+    max-width: 400px !important;
+    width: 100% !important;
+    height: auto !important;
+}
+#employment .imageEmployment img {
+    height: auto;
+    max-width: 1110px;
+    width: 100%;
+}
+
+#vision .imageVision {
+    position: absolute !important;
+    right: 40px !important;
+    bottom: 200px !important;
+    max-width: 500px !important;
+    width: 100% !important;
+    height: auto !important;
+}
+#vision .imageVision img {
+    width: 100%;  
+    max-width: 600px;
+    height: auto;     
+}
+/* 기타 세부사항 */
+#moreDetails {
+    display: none;
+    margin-top: 1rem;
+}
+
+.hide, #moreDetails {
+    transition: opacity 0.3s ease;
+}
+
+#employment .no-underline,
+#news .no-underline {
+    color: white;
+    text-decoration: none;
+}
+
+.title {
+    color: white;
+}
+.header {
+    background-color: rgba(42, 193, 188, 0.8);
+    color: white;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    box-shadow: none;
+    border-bottom: none;
+    transition: opacity 0.5s, transform 0.5s;
+    background-color: rgba(0, 0, 0, 0);
+    width: 53%;
+}
+
+.header .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+ 
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    scroll-margin-top: 6rem; /* 내비게이션 바 높이에 맞게 수정 */
+    padding: 6rem 2rem;
+    background-color: #2AC1BC;
+    margin: 1rem auto;
+    border-radius: 10px;
+    width: 52%;
+    box-shadow: none;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+    height: 100vh;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text {
+    text-align: left;
+}
+
+.text h1 {
+    color: white;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+
+.text p {
+    color: white;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    font-family: sans-serif;
+}
+
+.hide {
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.hide:hover {
+    text-decoration: underline;
+}
+
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer a {
+    color: #2AC1BC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+.sidebar {
+    position: fixed;
+    top: 50%;  
+    right: 0;
+    transform: translateY(-50%);  
+    width: 200px;
+    background-color: #2AC1BC;
+    color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.sidebar ul li {
+    margin-bottom: 1.5rem;
+}
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
